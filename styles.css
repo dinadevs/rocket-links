@@ -12,7 +12,8 @@ html {
     --primary-color-dark: #364FC7;
     
     height: 100vh;
-    background: url('./assets/Rocket-Astronaut-Sw-4K-scaled.webp') no-repeat;
+    width: 100vw;
+    background: url('./assets/Rocket-Astronaut-Sw-4K-scaled.webp') no-repeat center;
     background-size: cover;   
 }
 
