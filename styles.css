@@ -5,9 +5,70 @@
 }
 
 html {
+    /*variáveis*/
+    --text-color: #EDF2FF;
+    --bg-color: rgba(0, 8, 47, 0.7);
+    --primary-color: #4263eb;
+    --primary-color-dark: #364FC7;
+    
     height: 100vh;
     background: url('./assets/Rocket-Astronaut-Sw-4K-scaled.webp') no-repeat;
-    background-size: cover;
+    background-size: cover;   
+}
+
+.themeToggles{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 0px 0px;
+}
+
+
+label {
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+#blue-circle{
+    color: #4263eb;
+}
+
+#pink-circle{
+    color: #D6336C;
+}
+
+.theme-checkbox {
+    display: none;
+}
+
+.theme-label i:last-child {
+    display: none;
+}
+
+.theme-checkbox:checked + .theme-label i:last-child {
+    display: inline;
+}
+
+.theme-checkbox:checked + .theme-label i:first-child {
+    display: none;
+}
+
+body.light-blue {
+    --text-color: #00082F;
+    --bg-color: rgba(237, 242, 255, 0.6);
+}
+
+body.light-pink {
+    --text-color: #00082F;
+    --bg-color: rgba(243, 188, 211, 0.4);
+    --primary-color: #D6336C;
+    --primary-color-dark: #A61E4D; 
+}
+
+body.dark-pink {
+    --text-color: #EDF2FF;
+    --bg-color: rgba(66, 0, 28, 0.5);
+    --primary-color: #D6336C;
+    --primary-color-dark: #A61E4D; 
 }
 
 a {
@@ -17,14 +78,16 @@ a {
 body {
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding-top: 60px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /*padding-top: 60px;*/
 }
 
 .container {
     text-align: center;
     width: 300px;
     margin: 0px auto;
+    margin-top: 40px;
 }
 
 img {
@@ -36,12 +99,11 @@ img.avatar {
     width: 150px;
     height: 150px;
     padding: 3.7px;
-    border: #4263EB solid 4px;
+    border: var(--primary-color) solid 4px;
 }
 
 h1 {
     font-size: 32px;
-    color: #fffafa;
     margin-top: 24px;
     margin-bottom: 8px;
 }
@@ -49,7 +111,6 @@ h1 {
 p {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    color: #fffafa;
     opacity: 0.8;
     font-size: 18px;
 }
@@ -68,8 +129,8 @@ ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #4263EB;
-    color: #fffafa;
+    background: var(--primary-color);
+    color: var(--text-color);
     text-transform: uppercase;
     font-size: 14px;
 
@@ -80,13 +141,12 @@ ul li a {
 }
 
 ul li a:hover {
-    background: #364FC7;
+    background: var(--primary-color-dark);
 }
 
 footer {
     font-weight: 500;
     font-size: 15px;
-    color: #fffafa;
     opacity: 0.6;
     transition: opacity 400ms;
 }
@@ -96,6 +156,6 @@ footer:hover {
 }
 
 footer a {
-    color: #fffafa;
+    color: var(--text-color);
     display: block;
 }
